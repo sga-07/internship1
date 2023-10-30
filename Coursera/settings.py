@@ -15,8 +15,9 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+DEFAULT_PNG_PATH = os.path.join(BASE_DIR, 'media/default.png', 'default.png')
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'blog',
     'crispy_forms',
     'allauth',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +59,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# other middleware classes
+    'allauth.account.middleware.AccountMiddleware',
+    # other middleware classes
 ]
 
 ROOT_URLCONF = 'Coursera.urls'
@@ -64,7 +69,13 @@ ROOT_URLCONF = 'Coursera.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        #'DIRS': [TEMPLATE_DIR,],
+         'DIRS': [
+            # Add your custom template directory path here
+            os.path.join(BASE_DIR, 'templates'),
+            # Add additional paths as needed
+            #os.path.join(BASE_DIR, 'other_templates_directory'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,9 +155,10 @@ STATICFILES_DIRS = [
 
 #media
 MEDIA_URL = '/media/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 SITE_ID = 1
 
