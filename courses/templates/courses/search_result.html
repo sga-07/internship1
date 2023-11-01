@@ -12,15 +12,15 @@
         <br><br>
         <br>
         <form method="post" action="{% url 'courses:kerko_kurs' %}" class="intro-newslatter"> {% csrf_token %}
-          <input name="search" type="text" placeholder="Kerko kursin">
-          <button type="submit" class="site-btn">Kerko kursin</button>
+          <input name="search" type="text" placeholder="Search for the course">
+          <button type="submit" class="site-btn">Search for the course</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 <div class="container">
-    <h1 class=" mt-2 text-center">Rezultatet e kerkimit ({{ results|length }}):</h1>
+    <h1 class=" mt-2 text-center">Search results ({{ results|length }}):</h1>
     <div class="row course-items-area">
         <!-- course -->
         {% if results %}
@@ -36,7 +36,7 @@
               <div class="course-text">
                 <h5>{{ lesson.titulli }}</h5>
                 <p>{{ lesson.lenda }}</p>
-                <div class="students">Klasa 10</div>
+                <div class="students">“Class 10</div>
               </div>
             </a>
             </div>
@@ -46,7 +46,7 @@
         
         {% else %}
         <div class="text-center">
-            <h4>Nuk ka asnje rezultat.</h4>
+            <h4>There is no result</h4>
         </div>
         {% endif %}
         <!-- course -->

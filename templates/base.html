@@ -2,13 +2,13 @@
 {% load static %}
 <html lang="en">
 <head>
-	<title>MesoOn - Meso Online </title>
+	<title>GenioTech STEM education For all ages </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="WebUni Education Template">
 	<meta name="keywords" content="webuni, education, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="{% static 'webuni/img/favicon.png' %}" rel="shortcut icon"/>
+	<link href="{% static 'webuni/img/Genio-Logo.png' %}" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -36,7 +36,7 @@
 
 	<nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
 		<div class="container">
-		  <a class="navbar-brand js-scroll-trigger" href="/"><img src="{% static 'webuni/img/logo.png' %}" alt=""></a>
+		  <a class="navbar-brand js-scroll-trigger" href="/"><img src="{% static 'webuni/img/Genio-logo2f.png' %}" alt=""></a>
 		  <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			Menu
 	
@@ -44,29 +44,29 @@
 		  <div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:home' %}">Kryefaqe</a>
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:home' %}">Homepage</a>
 			  </li>
 			  <li class="nav-item mx-0 mx-lg-1">
 				<li class="nav-item mx-0 mx-lg-1">
-					<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#kurset">Kurse</a>
+					<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#kurset">courses</a>
 				  </li>
 			  </li>
 			  {% if request.user.profile.is_teacher == True %}
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:krijo_klase' %}">Krijo Klase</a>
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:krijo_klase' %}">Create Class</a>
 			  </li>
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:krijo_lende' %}">Krijo Lende</a>
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:krijo_lende' %}">Create Subject</a>
 			  </li>
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:krijo_mesim' %}">Krijo Mesim</a>
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:krijo_mesim' %}">Create Lesson</a>
 			  </li>
 			  {% else %}
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:contact' %}">Kontakt</a>
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:contact' %}">Contact</a>
 			  </li>
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:about' %}">Rreth</a>
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'courses:about' %}">About</a>
 			  </li>
 			  <li class="nav-item mx-0 mx-lg-1">
 				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'blogs:post_list' %}">Blog</a>
@@ -80,16 +80,16 @@
 				</a>
 			  
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				  <a class="dropdown-item" href="{% url 'users:profile' %}">Profili</a>
-				  <a class="dropdown-item" href="{% url 'account_logout' %}">Dil</a>
+				  <a class="dropdown-item" href="{% url 'users:profile' %}">Profile</a>
+				  <a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a>
 				</div>
 			  </div>
 			  {% else %}
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="active nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_login' %}">Hyr</a>
+				<a class="active nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_login' %}">Log in</a>
 			  </li>
 			  <li class="nav-item mx-0 mx-lg-1">
-				<a class="active nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_signup' %}">Regjistrohu</a>
+				<a class="active nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'account_signup' %}">Register</a>
 			  </li>
               {% endif %}
 			</ul>
@@ -108,11 +108,10 @@
 	<section class="banner-section spad">
 		<div class="container">
 			<div class="section-title mb-0 pb-2">
-				<h2>Bashkohu me komunitetin tone!</h2>
-				<p>Meso online leksione dhe mesime shkollore falas me ane te videove dhe komunikimit me mesues dhe pjestare e tjere te MesoOn. Eshte shume e thjeshte, gjeja e vetme qe ju duhet te beni eshte te Regjistroheni. Kliko me posht: </p>
-			</div>
+				<h2>Introduce your Kid to the future GENIO-TECH!</h2>
+				<p>Introduce Your child to STEM Education thorugh special curated online courses. It's very simple, the only thing you need to do is to register and Buy a Course. Click below:</div>
 			<div class="text-center pt-5">
-				<a href="{% url 'account_signup' %}" class="site-btn">Regjistrohuni tani</a>
+				<a href="{% url 'account_signup' %}" class="site-btn">Register now</a>
 			</div>
 		</div>
 	</section>
@@ -126,35 +125,35 @@
 			<div class="footer-warp">
 				<div class="row">
 					<div class="widget-item">
-						<h4>Informacione e Kontaktit</h4>
+						<h4>Contact Information</h4>
 						<ul class="contact-list">
-							<li>Albania <br>Mamurras</li>
-							<li>+355 69 2131 544</li>
-							<li>redi.dev@hotmail.com</li>
+							<li>258 abdelsalam aref street Louran <br>Qism El-Raml <br> Alexandria Governorate </li>
+							<li>(+2) 01204599771</li>
+							<li>info@geniotech.org</li>
 						</ul>
 					</div>
 					<div class="widget-item">
-						<h4>Klasa</h4>
+						<h4>Class</h4>
 						<ul>
-							<li><a href="">Matematike</a></li>
-							<li><a href="">Letersi & Gjuhe Shqipe</a></li>
-							<li><a href="">Kimi</a></li>
-							<li><a href="">Biologji</a></li>
-							<li><a href="">Programmim, etj</a></li>
+							<li><a href="">Mathematics</a></li>
+							<li><a href=""> Literature & Albanian Language</a></li>
+							<li><a href="">Chemistry</a></li>
+							<li><a href="">Biology</a></li>
+							<li><a href="">Programming, etc</a></li>
 						</ul>
 					</div>
 					<div class="widget-item">
-						<h4>Staffi</h4>
+						<h4>Staff</h4>
 						<ul>
-							<li><a href="">Mesuesit</a></li>
-							<li><a href="">Cmime</a></li>
-							<li><a href="">Nxenesit me te mire</a></li>
-							<li><a href="">Blogu</a></li>
+							<li><a href="">Teachers</a></li>
+							<li><a href="">Cmime</a>Prices</li>
+							<li><a href="">Top Students</a></li>
+							<li><a href="">Blog</a></li>
 							
 						</ul>
 					</div>
 					<div class="widget-item">
-						<h4>Rrjete Sociale</h4>
+						<h4>Social Networks</h4>
 						<ul>
 							<li><a href="">YouTube</a></li>
 							<li><a href="">Facebook</a></li>
@@ -165,11 +164,11 @@
 						</ul>
 					</div>
 					<div class="widget-item">
-						<h4>Lajmet e fundit</h4>
+						<h4>Latest News</h4>
 						<form class="footer-newslatter">
 							<input type="email" placeholder="E-mail">
-							<button class="site-btn">Abonohu</button>
-							<p>*Merr lajmet e fundit duke u abonuar</p>
+							<button class="site-btn">Subscribe</button>
+							<p>*Get the latest news by subscribing</p>
 						</form>
 					</div>
 				</div>
@@ -183,7 +182,7 @@
 					<li><a href="#">Privacy</a></li>
 				</ul>
 				<div class="">
-	Copyright &copy; MesoOn <script>document.write(new Date().getFullYear());</script> All rights reserved.
+	Copyright &copy;GenioTech  <script>document.write(new Date().getFullYear());</script> All rights reserved.
 </div>
 			</div>
 		</div>
