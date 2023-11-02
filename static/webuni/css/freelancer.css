@@ -159,13 +159,13 @@ sup {
 }
 
 a {
-  color: #e1691d;
+  color: #AA0628;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #e1691d;
+  color: #AA0628;
   text-decoration: underline;
 }
 
@@ -513,7 +513,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #e1691d;
+  color: #AA0628;
   word-break: break-word;
 }
 
@@ -2100,7 +2100,7 @@ textarea.form-control {
 }
 
 .was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
-  color: #e1691d;
+  color: #AA0628;
 }
 
 .was-validated .form-check-input:invalid ~ .invalid-feedback,
@@ -2110,11 +2110,11 @@ textarea.form-control {
 }
 
 .was-validated .custom-control-input:invalid ~ .custom-control-label, .custom-control-input.is-invalid ~ .custom-control-label {
-  color: #e1691d;
+  color: #AA0628;
 }
 
 .was-validated .custom-control-input:invalid ~ .custom-control-label::before, .custom-control-input.is-invalid ~ .custom-control-label::before {
-  border-color: #e1691d;
+  border-color: #AA0628;
 }
 
 .was-validated .custom-control-input:invalid ~ .invalid-feedback,
@@ -2133,11 +2133,11 @@ textarea.form-control {
 }
 
 .was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #e1691d;
+  border-color: #AA0628;
 }
 
 .was-validated .custom-file-input:invalid ~ .custom-file-label, .custom-file-input.is-invalid ~ .custom-file-label {
-  border-color: #e1691d;
+  border-color: #AA0628;
 }
 
 .was-validated .custom-file-input:invalid ~ .invalid-feedback,
@@ -2147,7 +2147,7 @@ textarea.form-control {
 }
 
 .was-validated .custom-file-input:invalid:focus ~ .custom-file-label, .custom-file-input.is-invalid:focus ~ .custom-file-label {
-  border-color: #e1691d;
+  border-color: #AA0628;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
@@ -2256,14 +2256,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #e1691d;
+  background-color: #AA0628;
   border-color: #b65416;
 }
 
 .btn-primary:hover {
   color: #fff;
   background-color: #b65416;
-  border-color: #e1691d;
+  border-color: #AA0628;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -9654,7 +9654,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #e1691d;
+  color: #AA0628;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
@@ -9662,7 +9662,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: #e1691d  ;
+  color: #AA0628  ;
 }
 
 #mainNav .navbar-toggler {
@@ -9685,7 +9685,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
-    background: #e1691d;
+    background: #AA0628;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
