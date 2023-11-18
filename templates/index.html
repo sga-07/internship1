@@ -9,7 +9,7 @@
     <div class="hero-text text-white">
       {% if request.user.is_authenticated %}
       <h2> Welcome {% if request.user.profile.is_teacher == True %}
-         teacher,
+         Admin,
         {% endif %} {{ request.user.username|capfirst }}
 
        

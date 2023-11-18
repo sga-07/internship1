@@ -1,12 +1,45 @@
+{#{% extends 'base.html' %}#}
+{#{% load crispy_forms_tags %}#}
+{##}
+{#{% block content %}#}
+{#<div class="container">#}
+{#    <h1>Create lesson</h1>#}
+{#        <form method="post" action="/krijo/mesim">{% csrf_token %}#}
+{#            {{ form|crispy }}#}
+{#            <button type="submit" class="btn mb-4 btn-primary">Create lesson</button>#}
+{#        </form>#}
+{#</div>#}
+{#{% endblock %}#}
+
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load bootstrap4 %}
 
 {% block content %}
 <div class="container">
     <h1>Create lesson</h1>
-        <form method="post" action="/krijo/mesim">{% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn mb-4 btn-primary">Create lesson</button>
-        </form>
+    <form method="post" action="/krijo/mesim" enctype='multipart/form-data'>
+        {% csrf_token %}
+
+        <div class="form-group">
+            {% bootstrap_field form.slug %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.titulli %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.lenda %}
+        </div>
+        <div class="form-group">
+            {% bootstrap_field form.video_id %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.pozicioni %}
+        </div>
+
+        <button type="submit" class="btn mb-4 btn-primary">Create lesson</button>
+    </form>
 </div>
 {% endblock %}

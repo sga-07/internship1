@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load bootstrap4 %}
 
 {% block content %}
 <div class="container">
     <h1>Create subjects</h1>
-        <form method="post" action="/krijo/lende" enctype='multipart/form-data'>{% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn mb-4 btn-primary">Create subjects</button>
-        </form>
+    <form method="post" action="/krijo/lende" enctype='multipart/form-data'>
+        {% csrf_token %}
+
+        <div class="form-group">
+            {% bootstrap_field form.krijues %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.slug %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.titulli %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.klasa %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.pershkrimi %}
+        </div>
+
+        <div class="form-group">
+            {% bootstrap_field form.imazhi_lendes %}
+        </div>
+
+        <button type="submit" class="btn mb-4 btn-primary">Create subjects</button>
+    </form>
 </div>
-{% endblock %}
+{% endblock content %}

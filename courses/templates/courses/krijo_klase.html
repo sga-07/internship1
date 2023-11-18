@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load bootstrap4 %}
 
 {% block content %}
 <div class="container">
     <h1>Create class</h1>
         <form method="post" action="/krijo/klase" enctype='multipart/form-data'>{% csrf_token %}
-            {{ form|crispy }}
+            {% bootstrap_field form.titulli %}
+            {% bootstrap_field form.pershkrimi %}
+            {% bootstrap_field form.imazhi %}
+
             <button type="submit" class="btn mb-4 btn-primary">Create class</button>
         </form>
 </div>
