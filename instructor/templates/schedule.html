@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-info-section set-bg" data-setbg="{% static 'webuni/img/page-bg/1.jpg' %}">
+    <div class="container">
+        <div class="site-breadcrumb">
+          <a href="/">Home</a>
+            <span>Schedule</span>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2>Schedule</h2>
+
+    {% if lectures %}
+        <ul class="list-group">
+            {% for lecture in lectures %}
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <strong>{{ lecture.date }}</strong><br>
+                            {{ lecture.start_time }} - {{ lecture.end_time }}
+                        </div>
+                        <div>
+                            {% if lecture.link %}
+                                <a href="{{ lecture.link }}" target="_blank" class="btn btn-primary">Join Lecture</a>
+                            {% else %}
+                                No Link Available
+                            {% endif %}
+                        </div>
+                        <div>
+                            <form method="post" action="{% url 'instructor:schedule' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="lecture_id" value="{{ lecture.id }}">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No lectures scheduled at the moment.</p>
+    {% endif %}
+</div>
+{% endblock content %}

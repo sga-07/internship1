@@ -9,7 +9,7 @@
     <div class="hero-text text-white">
       {% if request.user.is_authenticated %}
       <h2> Welcome {% if request.user.profile.is_teacher == True %}
-         Admin,
+         Teacher,
         {% endif %} {{ request.user.username|capfirst }}
 
        
@@ -59,6 +59,7 @@
 </section>
 <!-- categories section end -->
 {% if request.user.is_authenticated %}
+
 {% else %}
 <section class="course-section spad">
   <div class="container">
@@ -158,7 +159,18 @@
 {% if request.user.profile.is_teacher == True %}
 <div class="container">
   <h1 class="text-center">Your account has teacher access</h1><br>
-  <p class="text-center">Having a teacher account, you now have full access to this platform. You can perform more functions than the basic student account. Some of these functions are:</p>
+  <p class="text-center">Having a teacher account, you now have full access to this platform. You can perform more functions than the basic student account.</p>
+
+    <div data-aos="fade-left" class="row mt-4 mb-4 bg-light">
+      <div class="col-md-8">
+        <img class="img-fluid w-100" src="{% static 'webuni/img/categories/5.jpg' %}" alt="">
+      </div>
+
+        <div class="col-md-4 text-center">
+          <h3 class="p-4">You can upload lecture link here</h3>
+          <a href="{% url 'instructor:upload_lecture' %}" class="btn btn-outline-primary m-4">Upload a Lecture link</a>
+      </div>
+    </div>
 
   <div data-aos="fade-right" class="row mt-4 mb-4 bg-light">
     <div class="col-md-4 text-center">

@@ -30,6 +30,7 @@ urlpatterns = [
     path('', include('memberships.urls',namespace='memberships')),
     path('', include('users.urls',namespace='users')),
     path('accounts/', include('allauth.urls')),
+    path('instructor/', include('instructor.urls', namespace='instructor')),
 ]
 
 

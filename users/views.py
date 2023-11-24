@@ -63,22 +63,22 @@ def kerkesa(request):
         prof_id = prof.id
         Pro.objects.filter(id=prof_id).update(is_teacher=True)
         
-        message = 'Kerkesa juaj per nje llogari mesuesi u pranua! Tani ju mund te ktheheni tek MesoOn dhe te ngarkoni kurse dhe leksione, pune te mbare!'
+        message = 'Your request for a teacher account has been accepted! Now you can return to Genio-Tech and upload courses and lessons, happy teaching!'
         send_mail(
-            'MesoOn, kerkesa u pranua.',
+            'Genio-Tech, your request was accepted',
             message,
             'mesoon@no-reply.com',
             [email],
             fail_silently=False,
         )
         send_mail(
-            'MesoOn',
-            'Dikush beri kerkese per llogari mesuesi. Me info: ' + emri + ' , ' + email + ' , ' + numri_tel + ' , ' + str(prof) + '.',
+            'Genio-Tech',
+            'Someone requested a teacher account. Me info: ' + emri + ' , ' + email + ' , ' + numri_tel + ' , ' + str(prof) + '.',
             'mesoon@no-reply.com',
             ['redian1marku@gmail.com'],
             fail_silently=False,
         )
-        messages.info(request, f'Kerkesa u dergua me sukses, ju do te njoftoheni me email.')
+        messages.info(request, f'The request was successfully sent. You will be notified by email.')
         return redirect('courses:home')
 
 

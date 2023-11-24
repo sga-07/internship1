@@ -10,8 +10,8 @@
   <div class="container">
     <div class="site-breadcrumb">
       <a href="/">Homepage</a>
-      <span>Class /</span>
-      <span>Lesson /</span>
+      <a href="javascript:history.go(-2)">Class</a>
+      <a href="javascript:history.back()">Lesson</a>
       <span>Video </span>
     </div>
   </div>
@@ -30,10 +30,13 @@
 		<h1>{{ lesson.titulli }}</h1>
 		<div class='row'>
 			<div class='col-sm-12 col-md-12'>
+
 				{% if lesson is not None %}
 
 				<iframe id="video" width="100%" height="450px" src="https://www.youtube-nocookie.com/embed/{{ lesson.video_id }}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                 <div class="text-center">
+				<a href="{% url 'instructor:schedule' %}" class="mb-5 mt-2 btn btn-primary">get the lecture link</a>
+				</div>
 				<div class="text-center">
 				<a href="javascript:history.back()" class="mb-5 mt-2 btn btn-primary">Return to lessons</a>
 				</div>
